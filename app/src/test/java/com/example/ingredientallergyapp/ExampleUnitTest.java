@@ -1,4 +1,4 @@
-package com.example.foodallergyapp;
+package com.example.ingredientallergyapp;
 
 import org.junit.Test;
 
