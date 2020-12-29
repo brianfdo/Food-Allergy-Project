@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +78,11 @@ public class InputIngredientActivity extends AppCompatActivity implements Recycl
     @Override
     public void onItemClick(View view, int position) {
         Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+    }
+
+    public void enterApp(View view) {
+        Intent intent = new Intent(this, InputFoodActivity.class);
+        startActivity(intent);
     }
 
 }

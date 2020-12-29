@@ -42,7 +42,9 @@
         android:layout_marginTop="32dp"
         android:background="#A8FFFFFF"
         android:backgroundTint="#6BFFFFFF"
+        android:clickable="true"
         android:ems="10"
+        android:focusable="auto"
         android:fontFamily="sans-serif-medium"
         android:inputType="textPersonName"
         android:text="Ingredient Name"
@@ -74,11 +76,10 @@
         android:id="@+id/recyclerView"
         android:layout_width="340dp"
         android:layout_height="355dp"
-        app:layout_constraintBottom_toBottomOf="@+id/confirmInput"
+        app:layout_constraintBottom_toTopOf="@+id/confirmInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientInput"
-        app:layout_constraintVertical_bias="0.352" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredientInput" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

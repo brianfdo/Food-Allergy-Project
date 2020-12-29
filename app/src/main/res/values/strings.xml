@@ -6,4 +6,5 @@
     <string name="allergicQtext">What ingredients are you allergic to?</string>
     <string name="confirm">CONFIRM</string>
     <string name="addBtn">ADD</string>
+    <string name="foodnameQ">Enter food name:</string>
 </resources>
