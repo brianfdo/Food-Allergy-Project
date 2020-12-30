@@ -6,10 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,12 +28,15 @@ public class InputIngredientActivity extends AppCompatActivity implements Recycl
     EditText ingredientInput;
     Button addIngredient, confirmInput;
 
-    ArrayList<String> ingredients = new ArrayList<>();
+    public static ArrayList<String> ingredients = new ArrayList<>();
     RecyclerViewAdapter adapter;
 
     Integer indexValue;
     String item;
 
+    public static ArrayList<String> getIngredients() {
+        return ingredients;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +70,8 @@ public class InputIngredientActivity extends AppCompatActivity implements Recycl
             }
             if (add) {
                 ingredients.add(input);
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
             }
             adapter.notifyDataSetChanged();
             ingredientInput.setText("");
@@ -73,6 +81,10 @@ public class InputIngredientActivity extends AppCompatActivity implements Recycl
             ingredientInput.setText("");
             adapter.notifyDataSetChanged();
         });
+
+        confirmInput.setOnClickListener(this::enterApp);
+
+
     }
 
     @Override
