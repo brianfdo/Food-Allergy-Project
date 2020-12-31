@@ -30,11 +30,25 @@ public class CSVReader {
                 String manufacturer;
                 String ingredients;
 
-                int commaIndex = line.indexOf(",");
-                nbdNumber = Integer.parseInt(line.substring(0, commaIndex));
-                line = line.substring(commaIndex + 1);
+                //extract nbdNumber for easy id
+                int index = line.indexOf(",");
+                nbdNumber = Integer.parseInt(line.substring(0, index));
+                line = line.substring(index + 1);
+
+                //extract foodName
+                if (line.startsWith("\"")) {
+                    line = line.substring(1);
+                    index = line.indexOf("\"");
+                    foodname = line.substring(0, index);
+                    line = line.substring(index + 1);
+                } else {
+                    index = line.indexOf(",");
+                    foodname = line.substring(0, index);
+                    line = line.substring(index);
+                }
+
+                //extract manufacturer
                 
-                if ()
 
                 line = bfr.readLine();
             }
