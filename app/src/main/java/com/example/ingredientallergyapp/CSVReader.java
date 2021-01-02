@@ -13,9 +13,9 @@ public class CSVReader {
     public static void addFood(BrandedFood item) {
         brandedFoods.add(item);
     }
-    
+
     public static void readFile() {
-        File f = new File("Products.csv");
+        File f = new File("products.csv");
         try {
             FileReader fr = new FileReader(f);
             BufferedReader bfr = new BufferedReader(fr);
