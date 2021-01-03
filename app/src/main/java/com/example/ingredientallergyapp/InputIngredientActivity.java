@@ -72,10 +72,12 @@ public class InputIngredientActivity extends AppCompatActivity implements Recycl
                 ingredients.add(input);
                 InputMethodManager inputManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                 inputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                ingredientInput.clearFocus();
             }
             adapter.notifyDataSetChanged();
             ingredientInput.setText("");
         });
+
 
         ingredientInput.setOnClickListener(v -> {
             ingredientInput.setText("");
