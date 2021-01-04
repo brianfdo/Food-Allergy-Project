@@ -49,7 +49,6 @@ public class InputIngredientActivity extends AppCompatActivity implements Recycl
         ingredientInput = (EditText) findViewById(R.id.ingredientInput);
 
         // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new RecyclerViewAdapter(this, ingredients);
         adapter.setClickListener(this);
