@@ -4,6 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#009688"
     tools:context=".FoodOptionsActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/options"
+        android:layout_width="333dp"
+        android:layout_height="492dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionsQ"
+        app:layout_constraintVertical_bias="0.203" />
+
+    <TextView
+        android:id="@+id/optionsQ"
+        android:layout_width="314dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="monospace"
+        android:text="@string/optionQ"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

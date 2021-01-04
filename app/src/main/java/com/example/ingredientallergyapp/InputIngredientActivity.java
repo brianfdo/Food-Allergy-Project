@@ -28,7 +28,7 @@ public class InputIngredientActivity extends AppCompatActivity implements Recycl
     EditText ingredientInput;
     Button addIngredient, confirmInput;
 
-    public static ArrayList<String> ingredients = new ArrayList<>();
+    private static ArrayList<String> ingredients = new ArrayList<>();
     RecyclerViewAdapter adapter;
 
     Integer indexValue;
