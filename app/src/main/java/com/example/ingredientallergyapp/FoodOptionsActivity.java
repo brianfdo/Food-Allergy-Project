@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class FoodOptionsActivity extends AppCompatActivity implements RecyclerViewAdapter.ItemClickListener {
 
@@ -26,6 +28,16 @@ public class FoodOptionsActivity extends AppCompatActivity implements RecyclerVi
         foodOptions = (RecyclerView) findViewById(R.id.options);
 
         // search for valid foods
+        String food = InputFoodActivity.getFoodName();
+        Pattern pattern = Pattern.compile(food, Pattern.CASE_INSENSITIVE);
+        Matcher matcher;
+        for (BrandedFood item : CSVReader.brandedFoods) {
+            matcher = pattern.matcher(item.getFoodName());
+            boolean matchFound = matcher.find();
+            if(matchFound) {
+                foodNames.add(item.getFoodName());
+            }
+        }
 
         // set up the RecyclerView
         foodOptions.setLayoutManager(new LinearLayoutManager(this));

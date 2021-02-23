@@ -9,16 +9,20 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-
+import android.util.Log;
 public class InputFoodActivity extends AppCompatActivity {
 
-
+    private static final String TAG = InputFoodActivity.class.getSimpleName();
     public static String foodName;
     Button searchInput;
     EditText ingredientInput;
 
     public static String getFoodName() {
         return foodName;
+    }
+
+    public static void setFoodName(String foodName) {
+        InputFoodActivity.foodName = foodName;
     }
 
     @Override
@@ -45,8 +49,12 @@ public class InputFoodActivity extends AppCompatActivity {
                 }
             }
             if (add) {
-                foodName = input;
+                setFoodName(input);
             }
+            System.out.println(input);
+            System.out.println(foodName);
+            Log.d(TAG, input);
+            Log.d(TAG, foodName);
         });
 
         searchInput.setOnClickListener(this::enterOptions);
